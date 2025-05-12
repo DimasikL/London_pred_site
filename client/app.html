@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Прогноз цен на недвижимость в Лондоне</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="img"></div>
+
+<!-- ОДИН контейнер form -->
+<div class="form">
+    <h2>Площадь (кв. футы)</h2>
+    <input class="area" type="text" id="uiSqft" name="Squareft" value="100">
+
+    <h2>Количество спален</h2>
+    <div class="switch-field">
+        <input type="radio" id="radio-bedrooms-1" name="uiBedrooms" value="1" checked/>
+        <label for="radio-bedrooms-1">1</label>
+        <input type="radio" id="radio-bedrooms-2" name="uiBedrooms" value="2"/>
+        <label for="radio-bedrooms-2">2</label>
+        <input type="radio" id="radio-bedrooms-3" name="uiBedrooms" value="3"/>
+        <label for="radio-bedrooms-3">3</label>
+        <input type="radio" id="radio-bedrooms-4" name="uiBedrooms" value="4"/>
+        <label for="radio-bedrooms-4">4</label>
+        <input type="radio" id="radio-bedrooms-5" name="uiBedrooms" value="5"/>
+        <label for="radio-bedrooms-5">5</label>
+    </div>
+
+    <h2>Количество ванных комнат</h2>
+    <div class="switch-field">
+        <input type="radio" id="radio-bathrooms-1" name="uiBathrooms" value="1" checked/>
+        <label for="radio-bathrooms-1">1</label>
+        <input type="radio" id="radio-bathrooms-2" name="uiBathrooms" value="2"/>
+        <label for="radio-bathrooms-2">2</label>
+        <input type="radio" id="radio-bathrooms-3" name="uiBathrooms" value="3"/>
+        <label for="radio-bathrooms-3">3</label>
+        <input type="radio" id="radio-bathrooms-4" name="uiBathrooms" value="4"/>
+        <label for="radio-bathrooms-4">4</label>
+        <input type="radio" id="radio-bathrooms-5" name="uiBathrooms" value="5"/>
+        <label for="radio-bathrooms-5">5</label>
+    </div>
+
+    <h2>Количество гостиных</h2>
+    <div class="switch-field">
+        <input type="radio" id="radio-rec-1" name="uiReceptions" value="1" checked/>
+        <label for="radio-rec-1">1</label>
+        <input type="radio" id="radio-rec-2" name="uiReceptions" value="2"/>
+        <label for="radio-rec-2">2</label>
+        <input type="radio" id="radio-rec-3" name="uiReceptions" value="3"/>
+        <label for="radio-rec-3">3</label>
+        <input type="radio" id="radio-rec-4" name="uiReceptions" value="4"/>
+        <label for="radio-rec-4">4</label>
+        <input type="radio" id="radio-rec-5" name="uiReceptions" value="5"/>
+        <label for="radio-rec-5">5</label>
+    </div>
+
+    <h2>Местоположение (код города)</h2>
+    <select class="location" id="uiLocations">
+        <option value="" disabled selected>Выберите местоположение</option>
+        <option>SW11</option>
+        <option>EC1</option>
+    </select>
+
+    <button class="submit" onclick="onClickedEstimatePrice()" type="button">Оценить цену</button>
+
+    <div id="uiEstimatedPrice" class="result"><h2></h2></div>
+</div>
+
+</body>
+</html>

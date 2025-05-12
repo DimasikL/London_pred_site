@@ -1,0 +1,106 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: "Roboto", sans-serif;
+}
+
+.img {
+  background: url('https://www.pufikhomes.com/wp-content/uploads/2020/03/brutality-and-feminity-in-new-york-pufikhomes-13.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 270px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.area,
+.location,
+.submit,
+.result {
+  width: 260px;
+  height: 32px;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #999;
+  box-sizing: border-box;
+}
+
+.area,
+.location {
+  background: #f9f9f9;
+}
+
+.submit {
+  background: #a5dc86;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.result {
+  background: #dcd686;
+  text-align: center;
+  height: auto; /* или 48px, если хочешь фиксированную */
+  padding: 10px;
+  min-height: 40px; /* гарантированная высота */
+  line-height: 1.4;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+.switch-field {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.switch-field input[type="radio"] {
+  display: none;
+}
+
+.switch-field label {
+  background-color: #eee;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #999;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.switch-field input[type="radio"]:checked + label {
+  background-color: #a5dc86;
+  font-weight: bold;
+}
+</style>
+
+
