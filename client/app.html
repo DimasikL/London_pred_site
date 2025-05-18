@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Прогноз цен на недвижимость в Лондоне</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js"></script>
@@ -9,13 +11,19 @@
 <body>
 <div class="img"></div>
 
-<!-- ОДИН контейнер form -->
+<header class="site-header">
+    <h1 class="main-title">Прогноз цен на недвижимость в Лондоне</h1>
+</header>
+
 <div class="form">
     <h2>Площадь (кв. футы)</h2>
-    <input class="area" type="text" id="uiSqft" name="Squareft" value="100">
+    <input class="area" type="number" id="uiSqft" name="Squareft" 
+           value="100" min="50" max="100000" step="1" pattern="\d*"
+           aria-describedby="sqftError" required placeholder="Введите площадь">
+    <div id="sqftError" class="error-message" role="alert"></div>
 
     <h2>Количество спален</h2>
-    <div class="switch-field">
+    <div class="switch-field" role="radiogroup" aria-labelledby="bedrooms-label">
         <input type="radio" id="radio-bedrooms-1" name="uiBedrooms" value="1" checked/>
         <label for="radio-bedrooms-1">1</label>
         <input type="radio" id="radio-bedrooms-2" name="uiBedrooms" value="2"/>
@@ -56,17 +64,17 @@
         <label for="radio-rec-5">5</label>
     </div>
 
-    <h2>Местоположение (код города)</h2>
-    <select class="location" id="uiLocations">
-        <option value="" disabled selected>Выберите местоположение</option>
-        <option>SW11</option>
-        <option>EC1</option>
+    <h2>Местоположение (код района)</h2>
+    <select class="location" id="uiLocations" aria-label="Выберите район" required>
+        <option value="" disabled selected>Выберите район</option>
+        <option value="SW11">SW11 (Баттерси)</option>
+        <option value="EC1">EC1 (Клеркенвелл)</option>
     </select>
 
-    <button class="submit" onclick="onClickedEstimatePrice()" type="button">Оценить цену</button>
+    <button class="submit" onclick="onClickedEstimatePrice()" 
+            type="button" role="button">Узнать цену</button>
 
-    <div id="uiEstimatedPrice" class="result"><h2></h2></div>
+    <div id="uiEstimatedPrice" class="result" aria-live="polite"><h2></h2></div>
 </div>
-
 </body>
 </html>
